@@ -72,10 +72,8 @@ maxspeed = 5;
             <string>friction = 0.5;
 
 
+vspeed += 1
 
-if place_free(x+hspeed,y+vspeed) == false{
-    hspeed = 0;
-}
 
 
 if keyboard_check(vk_anykey)
@@ -84,7 +82,7 @@ if keyboard_check(vk_anykey)
     {
     
         if not place_free(x,y+1)
-        {vspeed=-8}
+        {vspeed=-10}
         //vspeed = vspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right
         image_speed = 0.2;
@@ -119,11 +117,6 @@ else
 
 
 
-gravity_direction=270
-if place_free(x,y+1)
-{gravity=.5}
-else
-{gravity=0}
 
 if place_free(x+hspeed,y) == false
 {
@@ -142,14 +135,17 @@ if place_free(x,y+vspeed) == false{
 vspeed = 0
 }
 
-
-if (speed &gt; maxspeed)
-{
-    speed = maxspeed;
+if place_free(x+hspeed,y+vspeed) == false{
+    hspeed = 0;
 }
-if (speed &lt; -maxspeed)
+
+if (hspeed &gt; maxspeed)
 {
-    speed = -maxspeed;
+    hspeed = maxspeed;
+}
+if (hspeed &lt; -maxspeed)
+{
+    hspeed = -maxspeed;
 }
 </string>
           </argument>
