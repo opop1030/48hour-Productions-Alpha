@@ -71,39 +71,42 @@ maxspeed = 5;
             <kind>1</kind>
             <string>friction = 0.5;
 
-
-if keyboard_check(ord('W'))
+if keyboard_check(vk_anykey)
 {
-
-    vspeed = vspeed - walkingspeed; 
-    //sprite_index = spr_test_walk_right
-    image_speed = 0.2;
+    if keyboard_check(ord('W'))
+    {
     
+        vspeed = vspeed - walkingspeed; 
+        //sprite_index = spr_test_walk_right
+        image_speed = 0.2;
+        
+    }
+    if keyboard_check(ord('S'))
+    {
+        vspeed = vspeed + walkingspeed; 
+        //sprite_index = spr_test_walk_right;    
+        image_speed = 0.2;
+    }
+    if keyboard_check(ord('A'))
+    {
+        hspeed = hspeed - walkingspeed; 
+        //sprite_index = spr_test_walk_right;    
+        image_speed = 0.2;
+    }
+    if keyboard_check(ord('D'))
+    {
+    
+        hspeed = hspeed + walkingspeed; 
+        //sprite_index = spr_test_walk_right    
+        image_speed = 0.2;
+    }
 }
-else if keyboard_check(ord('S'))
-{
-    vspeed = vspeed + walkingspeed; 
-    //sprite_index = spr_test_walk_right;    
-    image_speed = 0.2;
-}
-else if keyboard_check(ord('A'))
-{
-    hspeed = hspeed - walkingspeed; 
-    //sprite_index = spr_test_walk_right;    
-    image_speed = 0.2;
-}
-else if keyboard_check(ord('D'))
-{
-
-    hspeed = hspeed + walkingspeed; 
-    //sprite_index = spr_test_walk_right    
-    image_speed = 0.2;
-}
-else
+else 
 {
     //sprite_index = spr_test_idle;  
     image_speed = 0.03;
 }
+
 
 friction = 0.5;
 
