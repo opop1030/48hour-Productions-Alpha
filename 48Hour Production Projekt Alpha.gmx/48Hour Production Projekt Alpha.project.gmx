@@ -29,6 +29,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_collisionchecking.gml</script>
+    <script>scripts\scr_create_inventory.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player_test</object>
