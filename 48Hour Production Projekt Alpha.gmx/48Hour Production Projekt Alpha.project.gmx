@@ -6,10 +6,30 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_test</sprite>
+    <sprites name="Items">
+      <sprite>sprites\spr_collect_Spitzhacke</sprite>
+      <sprite>sprites\spr_collect_Knife</sprite>
+      <sprite>sprites\spr_collect_Sword</sprite>
+      <sprite>sprites\spr_collect_Falle1</sprite>
+      <sprite>sprites\spr_collect_Falle2</sprite>
+      <sprite>sprites\spr_collect_Bumerang</sprite>
+    </sprites>
+    <sprites name="Animationen">
+      <sprite>sprites\spr_blingbling</sprite>
+    </sprites>
+    <sprites name="Textures">
+      <sprite>sprites\spr_Baum</sprite>
+      <sprite>sprites\spr_Gebuesch</sprite>
+      <sprite>sprites\spr_Gras</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_collisionchecking.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player_test</object>
   </objects>
