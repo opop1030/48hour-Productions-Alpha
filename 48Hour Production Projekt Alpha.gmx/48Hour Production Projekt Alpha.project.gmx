@@ -13,6 +13,7 @@
   <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_player_test</object>
+    <object>objects\SCHINKEN</object>
   </objects>
   <timelines name="timelines"/>
   <rooms name="rooms">
