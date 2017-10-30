@@ -14,7 +14,7 @@
       <sprite>sprites\spr_collect_Sword</sprite>
       <sprite>sprites\spr_collect_Falle1</sprite>
       <sprite>sprites\spr_collect_Falle2</sprite>
-      <sprite>sprites\spr_collect_Bumerang</sprite>
+      <sprite>sprites\spr_collect_Boomerang</sprite>
     </sprites>
     <sprites name="Animationen">
       <sprite>sprites\spr_blingbling</sprite>

@@ -80,27 +80,29 @@ if place_free(x+hspeed,y+vspeed) == false{
 
 if keyboard_check(vk_anykey)
 {
-    if keyboard_check(ord('W'))
+    if keyboard_check(vk_space) //jump
     {
     
-        vspeed = vspeed - walkingspeed; 
+        if not place_free(x,y+1)
+        {vspeed=-8}
+        //vspeed = vspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right
         image_speed = 0.2;
         
     }
-    if keyboard_check(ord('S'))
+    if keyboard_check(ord('S')) //Ducken
     {
         vspeed = vspeed + walkingspeed; 
         //sprite_index = spr_test_walk_right;    
         image_speed = 0.2;
     }
-    if keyboard_check(ord('A'))
+    if keyboard_check(ord('A')) //Links
     {
         hspeed = hspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right;    
         image_speed = 0.2;
     }
-    if keyboard_check(ord('D'))
+    if keyboard_check(ord('D')) //rechts
     {
     
         hspeed = hspeed + walkingspeed; 
@@ -115,7 +117,13 @@ else
 }
 
 
-friction = 0.5;
+
+
+gravity_direction=270
+if place_free(x,y+1)
+{gravity=.5}
+else
+{gravity=0}
 
 if place_free(x+hspeed,y) == false
 {
@@ -163,7 +171,7 @@ if (speed &lt; -maxspeed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>Second</string>
           </argument>
         </arguments>
       </action>
