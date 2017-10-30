@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\spr_test_walk_right</sprite>
     <sprite>sprites\spr_test_idle</sprite>
+    <sprite>sprites\spr_block_test</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
