@@ -9,12 +9,16 @@
     <sprite>sprites\spr_block_test</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprites name="Items">
-      <sprite>sprites\spr_collect_Spitzhacke</sprite>
-      <sprite>sprites\spr_collect_Knife</sprite>
-      <sprite>sprites\spr_collect_Sword</sprite>
-      <sprite>sprites\spr_collect_Falle1</sprite>
-      <sprite>sprites\spr_collect_Falle2</sprite>
-      <sprite>sprites\spr_collect_Boomerang</sprite>
+      <sprite>sprites\spr_collect_Boomerang_Animated</sprite>
+      <sprite>sprites\spr_collect_Boomerang_static</sprite>
+      <sprite>sprites\spr_collect_Falle1_Animated</sprite>
+      <sprite>sprites\spr_collect_Falle1_static</sprite>
+      <sprite>sprites\spr_collect_Falle2_Animated</sprite>
+      <sprite>sprites\spr_collect_Knife_Animated</sprite>
+      <sprite>sprites\spr_collect_Knife_static</sprite>
+      <sprite>sprites\spr_collect_Falle2_static</sprite>
+      <sprite>sprites\spr_collect_Spitzhacke_static</sprite>
+      <sprite>sprites\spr_collect_Sword_static</sprite>
     </sprites>
     <sprites name="Animationen">
       <sprite>sprites\spr_blingbling</sprite>
@@ -23,6 +27,12 @@
       <sprite>sprites\spr_Baum</sprite>
       <sprite>sprites\spr_Gebuesch</sprite>
       <sprite>sprites\spr_Gras</sprite>
+    </sprites>
+    <sprites name="Inv_Items">
+      <sprite>sprites\spr_inventory</sprite>
+    </sprites>
+    <sprites name="GUI">
+      <sprite>sprites\spr_options</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -34,6 +44,9 @@
   <objects name="objects">
     <object>objects\obj_player_test</object>
     <object>objects\obj_block_test</object>
+    <object>objects\obj_controller_test</object>
+    <object>objects\obj_collect_Falle1</object>
+    <object>objects\obj_collect_Falle2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
