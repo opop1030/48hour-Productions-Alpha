@@ -7,7 +7,6 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_test</sprite>
     <sprites name="Items">
       <sprite>sprites\spr_collect_Spitzhacke</sprite>
       <sprite>sprites\spr_collect_Knife</sprite>
@@ -33,6 +32,7 @@
   <objects name="objects">
     <object>objects\obj_player_test</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room_test</room>
   </rooms>
