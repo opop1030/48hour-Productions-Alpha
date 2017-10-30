@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_block_test</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprites name="Items">
       <sprite>sprites\spr_collect_Spitzhacke</sprite>
@@ -13,7 +14,7 @@
       <sprite>sprites\spr_collect_Sword</sprite>
       <sprite>sprites\spr_collect_Falle1</sprite>
       <sprite>sprites\spr_collect_Falle2</sprite>
-      <sprite>sprites\spr_collect_Bumerang</sprite>
+      <sprite>sprites\spr_collect_Boomerang</sprite>
     </sprites>
     <sprites name="Animationen">
       <sprite>sprites\spr_blingbling</sprite>
@@ -31,8 +32,8 @@
   </scripts>
   <objects name="objects">
     <object>objects\obj_player_test</object>
+    <object>objects\obj_block_test</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room_test</room>
   </rooms>
