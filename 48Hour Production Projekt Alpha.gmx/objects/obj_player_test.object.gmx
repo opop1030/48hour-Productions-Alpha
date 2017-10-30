@@ -49,7 +49,7 @@ maxspeed = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Keyboard Listener</string>
+            <string>Movement Managr</string>
           </argument>
         </arguments>
       </action>
@@ -70,6 +70,13 @@ maxspeed = 5;
           <argument>
             <kind>1</kind>
             <string>friction = 0.5;
+
+
+
+if place_free(x+hspeed,y+vspeed) == false{
+    hspeed = 0;
+}
+
 
 if keyboard_check(vk_anykey)
 {
@@ -110,6 +117,24 @@ else
 
 friction = 0.5;
 
+if place_free(x+hspeed,y) == false
+{
+    if hspeed &gt; 0
+        move_contact_solid(0,-1)
+    if hspeed &lt; 0
+        move_contact_solid(180,-1)
+hspeed = 0
+}
+
+if place_free(x,y+vspeed) == false{
+    if vspeed &gt; 0
+        move_contact_solid(270,-1)
+    if vspeed &lt; 0
+        move_contact_solid(90,-1)
+vspeed = 0
+}
+
+
 if (speed &gt; maxspeed)
 {
     speed = maxspeed;
@@ -119,6 +144,46 @@ if (speed &lt; -maxspeed)
     speed = -maxspeed;
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
