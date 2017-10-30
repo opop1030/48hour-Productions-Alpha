@@ -29,7 +29,73 @@
 maxspeed = 5;
 
 
+//Item id
+items[0,0] = 0
+//item stackability 1/0
+items[0,1] = 0
+//item  blockablility
+items[0,2] = 1
 
+items[1,0] = 1
+//item stackability 1/0
+items[1,1] = 0
+//item  blockablility
+items[1,2] = 1
+
+items[2,0] = 2
+//item stackability 1/0
+items[2,1] = 0
+//item  blockablility
+items[2,2] = 1
+
+items[3,0] = 3
+//item stackability 1/0
+items[3,1] = 1
+//item  blockablility
+items[3,2] = 1
+
+/*
+items[0,0] = 1
+items[0,0] = 1
+items[0,0] = 1
+items[0,0] = 1
+items[0,0] = 1
+items[0,0] = 1
+items[0,0] = 1
+*/
+
+
+
+inventory[0,0] = 0
+inventory[1,0] = 0
+inventory[2,0] = 0
+inventory[3,0] = 0
+inventory[4,0] = 0
+inventory[5,0] = 0
+inventory[6,0] = 0
+inventory[7,0] = 0
+inventory[8,0] = 0
+
+
+//set amount to 0
+inventory[0,1] = 0
+inventory[1,1] = 0
+inventory[2,1] = 0
+inventory[3,1] = 0
+inventory[4,1] = 0
+inventory[5,1] = 0
+inventory[6,1] = 0
+inventory[7,1] = 0
+inventory[8,1] = 0
+
+inventory[0,0] = items[0,0]
+inventory[0,1] = 1
+
+inventory[1,0] = items[1,0]
+inventory[1,1] = 1
+
+inventory[2,0] = items[3,0]
+inventory[2,1] = 3
 </string>
           </argument>
         </arguments>
@@ -170,7 +236,7 @@ if (hspeed &lt; -maxspeed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Second</string>
+            <string>Inventory Manager</string>
           </argument>
         </arguments>
       </action>
@@ -191,6 +257,44 @@ if (hspeed &lt; -maxspeed)
           <argument>
             <kind>1</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+draw_self();
+for (i = 0; i &lt; 9; i++)
+{
+  if (inventory[i, 1] &gt;= 1)  
+  {
+    //draw_text(100, 100, inventory[i, 0]])
+    draw_sprite(spr_inventory, inventory[i, 0], i*100, 200) 
+    if (inventory[i, 1] &gt; 1)
+    {
+        draw_text(i*100, 200, inventory[i, 1])
+    }
+    
+  
+  }
+}
+</string>
           </argument>
         </arguments>
       </action>

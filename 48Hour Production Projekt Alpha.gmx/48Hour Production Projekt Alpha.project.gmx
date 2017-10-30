@@ -24,6 +24,9 @@
       <sprite>sprites\spr_Gebuesch</sprite>
       <sprite>sprites\spr_Gras</sprite>
     </sprites>
+    <sprites name="Inv_Items">
+      <sprite>sprites\spr_inventory</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -34,6 +37,7 @@
   <objects name="objects">
     <object>objects\obj_player_test</object>
     <object>objects\obj_block_test</object>
+    <object>objects\obj_controller_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
