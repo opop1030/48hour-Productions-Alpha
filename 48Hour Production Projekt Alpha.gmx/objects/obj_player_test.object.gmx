@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_player_test</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -27,42 +27,6 @@
             <kind>1</kind>
             <string>walkingspeed = 1;
 maxspeed = 5;
-
-
-//Item id
-items[0,0] = 0
-//item stackability 1/0
-items[0,1] = 0
-//item  blockablility
-items[0,2] = 1
-
-items[1,0] = 1
-//item stackability 1/0
-items[1,1] = 0
-//item  blockablility
-items[1,2] = 1
-
-items[2,0] = 2
-//item stackability 1/0
-items[2,1] = 0
-//item  blockablility
-items[2,2] = 1
-
-items[3,0] = 3
-//item stackability 1/0
-items[3,1] = 1
-//item  blockablility
-items[3,2] = 1
-
-/*
-items[0,0] = 1
-items[0,0] = 1
-items[0,0] = 1
-items[0,0] = 1
-items[0,0] = 1
-items[0,0] = 1
-items[0,0] = 1
-*/
 
 
 
@@ -87,15 +51,6 @@ inventory[5,1] = 0
 inventory[6,1] = 0
 inventory[7,1] = 0
 inventory[8,1] = 0
-
-inventory[0,0] = items[0,0]
-inventory[0,1] = 1
-
-inventory[1,0] = items[1,0]
-inventory[1,1] = 1
-
-inventory[2,0] = items[3,0]
-inventory[2,1] = 3
 </string>
           </argument>
         </arguments>
@@ -187,6 +142,7 @@ else
 
 
 
+
 if place_free(x+hspeed,y) == false
 {
     if hspeed &gt; 0
@@ -256,7 +212,77 @@ if (hspeed &lt; -maxspeed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>
+if place_meeting(x,y,obj_collect_Falle1)
+{
+    done = 0
+     for (i = 0; i &lt; 9; i++)
+    {
+        if ((inventory[i, 0] == 3))
+        {
+            inventory[i, 1]++
+            with (obj_collect_Falle1)
+            {
+                 instance_destroy();
+            }
+            done = 1
+            break
+        }
+    }
+    if(done == 0)
+    {
+        for (i = 0; i &lt; 9; i++)
+        {
+            if (inventory[i, 1] == 0)  
+            {
+                inventory[i, 0] = 3
+                inventory[i, 1] = 1
+                with (obj_collect_Falle1)
+                {
+                     instance_destroy();
+                }
+                break
+            }
+        }
+    }
+}
+
+if place_meeting(x,y,obj_collect_Falle2)
+{
+    done = 0
+     for (i = 0; i &lt; 9; i++)
+    {
+        if ((inventory[i, 0] == 4))
+        {
+            inventory[i, 1]++
+            with (obj_collect_Falle2)
+            {
+                 instance_destroy();
+            }
+            done = 1
+            break
+        }
+    }
+    if(done == 0)
+    {
+        for (i = 0; i &lt; 9; i++)
+        {
+            if (inventory[i, 1] == 0)  
+            {
+                inventory[i, 0] = 4
+                inventory[i, 1] = 1
+                with (obj_collect_Falle2)
+                {
+                     instance_destroy();
+                }
+                break
+            }
+        }
+    }
+}
+
+
+</string>
           </argument>
         </arguments>
       </action>
@@ -285,7 +311,7 @@ for (i = 0; i &lt; 9; i++)
   if (inventory[i, 1] &gt;= 1)  
   {
     //draw_text(100, 100, inventory[i, 0]])
-    draw_sprite(spr_inventory, inventory[i, 0], i*100, 200) 
+    draw_sprite(spr_inventory, inventory[i, 0], i*100+100, 200) 
     if (inventory[i, 1] &gt; 1)
     {
         draw_text(i*100, 200, inventory[i, 1])
