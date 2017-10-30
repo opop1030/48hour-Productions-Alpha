@@ -101,8 +101,8 @@ global.items[5,2] = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var base_w = 480;
-var base_h = 272;
+            <string>var base_w = 352;
+var base_h = 288;
 var aspect = display_get_width() / display_get_height();
 if (aspect &gt; 1)
     {
@@ -120,10 +120,9 @@ else
     }
     
 
-draw_sprite(spr_options, 0, 20, 20);
-draw_sprite(spr_options, 0, ww - 20, 20);
-draw_sprite(spr_options, 0, ww - 20, hh - 20);
-draw_sprite(spr_options, 0, 20, hh - 20);
+
+draw_sprite(spr_options, 0, ww - 35, 20);
+
 </string>
           </argument>
         </arguments>

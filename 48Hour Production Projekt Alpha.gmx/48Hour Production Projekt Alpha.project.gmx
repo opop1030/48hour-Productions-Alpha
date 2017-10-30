@@ -47,9 +47,11 @@
     <object>objects\obj_controller_test</object>
     <object>objects\obj_collect_Falle1</object>
     <object>objects\obj_collect_Falle2</object>
+    <object>objects\obj_mapgenerator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
+    <room>rooms\room_generator</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
