@@ -71,6 +71,9 @@ else
     global.VIEW_HEIGHT = min(base_h, max_h);
     global.VIEW_WIDTH = global.VIEW_HEIGHT * aspect;
     }
+    
+    
+global.activeinv = 0;    
 </string>
           </argument>
         </arguments>
@@ -158,7 +161,30 @@ else
     image_speed = 0.03;
 }
 
-
+if mouse_wheel_down()
+{
+    if (global.activeinv &gt;=1)
+    {
+        global.activeinv -= 1;
+    }
+    else
+    {
+        global.activeinv = 8;
+    }
+    
+}
+if mouse_wheel_up()
+{
+    if (global.activeinv &lt;=7)
+    {
+        global.activeinv += 1;
+    }
+    else
+    {
+        global.activeinv = 0;
+    }
+    
+}
 
 
 
@@ -405,14 +431,15 @@ if place_meeting(x,y,obj_collect_Knife)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>draw_sprite(spr_invindicate, 0, global.activeinv *150+150- (sprite_get_width(spr_invindicate)/2 ), global.VIEW_HEIGHT  - (sprite_get_height(spr_invindicate)/2))
+
 draw_self();
 for (i = 0; i &lt; 9; i++)
 {
   if (inventory[i, 1] &gt;= 1)  
   {
     //draw_text(100, 100, inventory[i, 0]])
-    draw_sprite(spr_inventory, inventory[i, 0], i*120+120, global.VIEW_HEIGHT - 50) 
+    draw_sprite(spr_inventory, inventory[i, 0], i*150+150 - (sprite_get_width(spr_inventory)/2), global.VIEW_HEIGHT - (sprite_get_height(spr_inventory)/2)) 
     if (inventory[i, 1] &gt; 1)
     {
         draw_text(i*100, 200, inventory[i, 1])
