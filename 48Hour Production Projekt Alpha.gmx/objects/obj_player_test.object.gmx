@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>walkingspeed = 1;
 maxspeed = 5;
-lookdirection = 1;
+
 
 
 inventory[0,0] = 0
@@ -74,7 +74,6 @@ else
     
     
 global.activeinv = 0;    
-
 </string>
           </argument>
         </arguments>
@@ -123,66 +122,9 @@ global.activeinv = 0;
 vspeed += 1
 
 
- 
 
 if keyboard_check(vk_anykey)
 {
-   
-     if keyboard_check(ord('Q'))
-    {
-      show_debug_message("Exit not created!");
-        if (inventory[global.activeinv, 1] != 0)
-        {
-            if (lookdirection == -1)
-            {
-                if place_free(x-32,y)
-                {
-                      show_debug_message("Exit not created2!");
-                    var inst;
-                    inst = instance_create(x + (lookdirection * 32), y, inventory[global.activeinv, 2]);
-                    with (inst)
-                    {
-                        speedthrow = -2
-                        image_xscale = 0.2
-                        image_yscale = 0.2
-                    }
-                
-                    inventory[global.activeinv, 0] = -1
-                    inventory[global.activeinv, 1] -= 1
-                    inventory[global.activeinv, 2] = 0
-                }
-            
-            
-            }
-            
-            if (lookdirection == 1)
-            {
-                if place_free(x+32,y)
-                {
-                      show_debug_message("Exit not created2!");
-                    var inst;
-                    inst = instance_create(x + (lookdirection * 32), y, inventory[global.activeinv, 2]);
-                    with (inst)
-                    {
-                        speedthrow = 2
-                        image_xscale = 0.2
-                        image_yscale = 0.2
-                    }
-                
-                    inventory[global.activeinv, 0] = -1
-                    inventory[global.activeinv, 1] -= 1
-                    inventory[global.activeinv, 2] = 0
-                }
-            
-            
-            }
-            
-        }
-    }  
-        
-    
-    
-
     if keyboard_check(vk_space) //jump
     {
     
@@ -204,15 +146,13 @@ if keyboard_check(vk_anykey)
         hspeed = hspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right;    
         image_speed = 0.2;
-        lookdirection = -1;
     }
     if keyboard_check(ord('D')) //rechts
     {
-        
+    
         hspeed = hspeed + walkingspeed; 
         //sprite_index = spr_test_walk_right    
         image_speed = 0.2;
-        lookdirection = 1;
     }
 }
 else 
@@ -343,7 +283,6 @@ if place_meeting(x,y,obj_collect_Falle1)
             {
                 inventory[i, 0] = 3
                 inventory[i, 1] = 1
-                inventory[i, 2] = obj_collect_Falle1
                  with(instance_find(obj_collect_Falle1, 0))
             {
                      instance_destroy();
@@ -378,7 +317,6 @@ if place_meeting(x,y,obj_collect_Falle2)
             {
                 inventory[i, 0] = 4
                 inventory[i, 1] = 1
-                 inventory[i, 2] = obj_collect_Falle2
                 with(instance_find(obj_collect_Falle2, 0))
                 {
                      instance_destroy();
@@ -398,7 +336,6 @@ if place_meeting(x,y,obj_collect_Bomerang)
         {
             inventory[i, 0] = 5
             inventory[i, 1] = 1
-             inventory[i, 2] = obj_collect_Bomerang
              with(instance_find(obj_collect_Bomerang, 0))
             {
                  instance_destroy();
@@ -418,7 +355,6 @@ if place_meeting(x,y,obj_collect_Spitzhacke)
         {
             inventory[i, 0] = 0
             inventory[i, 1] = 1
-             inventory[i, 2] = obj_collect_Spitzhacke
              with(instance_find(obj_collect_Spitzhacke, 0))
             {
                  instance_destroy();
@@ -440,7 +376,6 @@ if place_meeting(x,y,obj_collect_Sword)
         {
             inventory[i, 0] = 2
             inventory[i, 1] = 1
-             inventory[i, 2] = obj_collect_Sword
              with(instance_find(obj_collect_Sword, 0))
             {
                  instance_destroy();
@@ -461,7 +396,7 @@ if place_meeting(x,y,obj_collect_Knife)
         {
             inventory[i, 0] = 1
             inventory[i, 1] = 1
-             inventory[i, 2] = obj_collect_Knife
+            
              with(instance_find(obj_collect_Knife, 0))
             {
                  instance_destroy();
@@ -513,8 +448,6 @@ for (i = 0; i &lt; 9; i++)
   
   }
 }
-
-
 </string>
           </argument>
         </arguments>
