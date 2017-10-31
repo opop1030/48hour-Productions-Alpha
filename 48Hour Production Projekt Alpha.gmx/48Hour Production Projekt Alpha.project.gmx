@@ -41,7 +41,6 @@
     <script>scripts\scr_collisionchecking.gml</script>
     <script>scripts\scr_create_inventory.gml</script>
   </scripts>
-  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_player_test</object>
     <object>objects\obj_block_test</object>
@@ -51,8 +50,8 @@
     <object>objects\obj_mapgenerator</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_generator</room>
     <room>rooms\room_test</room>
+    <room>rooms\room_generator</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
