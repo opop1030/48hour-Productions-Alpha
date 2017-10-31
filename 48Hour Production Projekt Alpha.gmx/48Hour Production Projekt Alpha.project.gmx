@@ -34,6 +34,7 @@
     <sprites name="GUI">
       <sprite>sprites\spr_options</sprite>
     </sprites>
+    <sprite>sprites\spr_red_test</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -41,6 +42,7 @@
     <script>scripts\scr_collisionchecking.gml</script>
     <script>scripts\scr_create_inventory.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_player_test</object>
     <object>objects\obj_block_test</object>
@@ -48,10 +50,11 @@
     <object>objects\obj_collect_Falle1</object>
     <object>objects\obj_collect_Falle2</object>
     <object>objects\obj_mapgenerator</object>
+    <object>objects\obj_red_test</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test</room>
     <room>rooms\room_generator</room>
+    <room>rooms\room_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
