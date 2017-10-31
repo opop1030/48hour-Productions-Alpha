@@ -33,6 +33,7 @@
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_invindicate</sprite>
     </sprites>
     <sprite>sprites\spr_red_test</sprite>
   </sprites>
@@ -42,7 +43,6 @@
     <script>scripts\scr_collisionchecking.gml</script>
     <script>scripts\scr_create_inventory.gml</script>
   </scripts>
-  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_player_test</object>
     <object>objects\obj_block_test</object>
@@ -51,10 +51,15 @@
     <object>objects\obj_collect_Falle2</object>
     <object>objects\obj_mapgenerator</object>
     <object>objects\obj_red_test</object>
+    <object>objects\obj_block_128</object>
+    <object>objects\obj_collect_Bomerang</object>
+    <object>objects\obj_collect_Knife</object>
+    <object>objects\obj_collect_Spitzhacke</object>
+    <object>objects\obj_collect_Sword</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_generator</room>
     <room>rooms\room_test</room>
+    <room>rooms\room_generator</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
