@@ -46,7 +46,7 @@
           <argument>
             <kind>1</kind>
             <string>Mapwidth = 200;
-Mapheight = 200;
+Mapheight = 120;
 Mapmiddle = Mapheight / 2;
 
 Cursorheight = 100;
@@ -62,24 +62,26 @@ Flat_Step_range1 = 0;
 Flat_Step_range2 = 2;
 
 //Biom Mountain
-Moun_Step_range1 = 0;
-Moun_Step_range2 = 2;
+Moun_Step_range1 = 1;
+Moun_Step_range2 = 3;
 
 //Biom Gap
-Gap_Step_range1 = 0;
-Gap_Step_range2 = 2;
+Gap_Step_range1 = 1;
+Gap_Step_range2 = 3;
 
 
 //Caves
 
+randomize();
+
 Cavechunk_size_width_range1 = 30;
 Cavechunk_size_width_range2 = 60;
-Cavechunk_size_height_range1 = 7;
-Cavechunk_size_height_range2 = 12;
-Cavechunk_tunnelsize_range1 = 5;
-Cavechunk_tunnelsize_range2 = 10;
+Cavechunk_size_height_range1 = (irandom(2)+12);
+Cavechunk_size_height_range2 = (irandom(5)+15);
+Cavechunk_tunnelsize_range1 = (irandom(3)+3);
+Cavechunk_tunnelsize_range2 = (irandom(5)+5);
 
-Cavechunk_movementrange = 3;
+Cavechunk_movementrange = (irandom(3)+2);
 
 
 
@@ -154,6 +156,15 @@ while(Curserwidth &lt; Mapwidth){
     var biomnumber = irandom(2);
     //show_message(biomnumber);
     
+    //Check if its to low or to high
+    //Manipulate Biom Randomness if its to low or to high
+    if(Cursorheight &gt; (Mapheight * 0.8)){
+        biomnumber = 2;      
+    }
+    if(Cursorheight &lt; (Mapheight * 0.2)){
+        biomnumber = 1;
+    }
+    
     if(biomnumber == 0)
     {
         //show_message("Flatland");
@@ -172,13 +183,12 @@ while(Curserwidth &lt; Mapwidth){
                 Cursorheight = Cursorheight + (irandom(Flat_Step_range2-Flat_Step_range1) + Flat_Step_range1);
                 
                 
-                
             }else if (chance == 9)
             {
                 //show_message(irandom(Flat_Step_range2-Flat_Step_range1) + Flat_Step_range1)
                 //down
                 Cursorheight = Cursorheight - (irandom(Flat_Step_range2-Flat_Step_range1) + Flat_Step_range1);
-                
+                if (Cursorheight &lt; 0) Cursorheight = 0;
                 
             }else{
                 //samelevel
@@ -218,7 +228,7 @@ while(Curserwidth &lt; Mapwidth){
             {
                 //down
                 Cursorheight = Cursorheight - (irandom(Moun_Step_range2-Moun_Step_range1) + Moun_Step_range1);
-                
+                if (Cursorheight &lt; 0) Cursorheight = 0;
                 
             }else{
                 //up
@@ -261,7 +271,7 @@ while(Curserwidth &lt; Mapwidth){
             }else{
                 //down
                 Cursorheight = Cursorheight - (irandom(Gap_Step_range2-Gap_Step_range1) + Gap_Step_range1);
-                
+                if (Cursorheight &lt; 0) Cursorheight = 0;
             }
             Map[Curserwidth,Cursorheight] = 1;
             
@@ -296,7 +306,7 @@ while(Cursorheight &lt; Mapheight)
     show_message("Curserwidth");
     show_message(Curserwidth)*/
     
-    if(Curserwidth &gt; Mapwidth){
+    if(Curserwidth &gt;= Mapwidth){
         Curserwidth = 0;
         Cursorheight = Cursorheight + (irandom(Cavechunk_size_height_range2-Cavechunk_size_height_range1)+Cavechunk_size_height_range1);
     }
@@ -304,6 +314,7 @@ while(Cursorheight &lt; Mapheight)
     
     if(irandom(1) == 0){ //50% Chance
         for(i = Curserwidth; i &lt; cavechunk_width; i++){
+        
             Map[Curserwidth,Cursorheight] = 0;
             
             drawtop = Cursorheight + (irandom(Cavechunk_tunnelsize_range2-Cavechunk_tunnelsize_range1) + Cavechunk_tunnelsize_range1)
@@ -371,17 +382,23 @@ for (xwidth = 0; xwidth &lt; Mapwidth; xwidth += 1)
             coordinate_y = (xheight+1) * Blockspacing;
             instance_create(coordinate_x, coordinate_y, obj_block_test);
         }
-        
-        //Zu Testzwecken
-        if(Map[xwidth,xheight] == 2)
-        {
-            coordinate_x = (xwidth+1) * Blockspacing;
-            coordinate_y = (xheight+1) * Blockspacing;
-            instance_create(coordinate_x, coordinate_y, obj_red_test);
-        }
+    
         
     }
 }
+
+//Save 5 Layers //Under Generation
+for (xwidth = 0; xwidth &lt; Mapwidth; xwidth += 1)
+{
+    for(i = Mapheight; i &lt; (Mapheight + 5); i++){
+        coordinate_x = (xwidth+1) * Blockspacing;
+        coordinate_y = (i+1) * Blockspacing;
+        instance_create(coordinate_x, coordinate_y, obj_block_test);
+    }
+}
+
+
+
 
 
 </string>

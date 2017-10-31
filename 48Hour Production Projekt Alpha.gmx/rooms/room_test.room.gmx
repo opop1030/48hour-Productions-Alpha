@@ -96,14 +96,14 @@
     <instance objName="obj_block_test" x="928" y="224" name="inst_F0F7A191" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_test" x="640" y="224" name="inst_BCE1A01B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_test" x="768" y="224" name="inst_8559847B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Knife" x="576" y="192" name="inst_7B1BB31C" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Bomerang" x="640" y="192" name="inst_26B80D0B" locked="0" code="" scaleX="0.200000002980232" scaleY="0.200000002980232" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Sword" x="704" y="192" name="inst_1A6B6536" locked="0" code="" scaleX="0.200000002980232" scaleY="0.200000002980232" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Spitzhacke" x="768" y="192" name="inst_42F9FBF3" locked="0" code="" scaleX="0.200000002980232" scaleY="0.200000002980232" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Knife" x="800" y="192" name="inst_9A5F0171" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Knife" x="864" y="192" name="inst_1FB661D7" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Knife" x="896" y="192" name="inst_495F8A9F" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collect_Knife" x="928" y="192" name="inst_78648D61" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="576" y="192" name="inst_7B1BB31C" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="640" y="192" name="inst_26B80D0B" locked="0" code="" scaleX="0.200000002980232" scaleY="0.200000002980232" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="704" y="192" name="inst_1A6B6536" locked="0" code="" scaleX="0.200000002980232" scaleY="0.200000002980232" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="768" y="192" name="inst_42F9FBF3" locked="0" code="" scaleX="0.200000002980232" scaleY="0.200000002980232" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="800" y="192" name="inst_9A5F0171" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="864" y="192" name="inst_1FB661D7" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="896" y="192" name="inst_495F8A9F" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="928" y="192" name="inst_78648D61" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
