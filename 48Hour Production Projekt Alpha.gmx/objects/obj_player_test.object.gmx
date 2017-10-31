@@ -25,16 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>walkingspeed = 1;
 maxspeed = 5;
-
-=======
-            <string>walkingspeed = 5;
-maxspeed = 10;
 lookdirection = 1;
->>>>>>> d93517fdc26b65e4319f758873875276444241c7
-
+instances[0] = 0;
+ic = 0;
 
 inventory[0,0] = 0
 inventory[1,0] = 0
@@ -80,32 +75,13 @@ else
     
     
 global.activeinv = 0;    
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>Movement Managr</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -122,20 +98,95 @@ global.activeinv = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction = 1;
+            <string>friction = 0.5;
 
 
 vspeed += 1
 
 
+ 
 
 if keyboard_check(vk_anykey)
 {
+   
+     if keyboard_check_pressed(ord('Q'))
+    {
+     
+        if (inventory[global.activeinv, 1] != 0)
+        {
+            if (lookdirection == -1)
+            {
+                if place_free(x-32,y)
+                {
+                      
+                    
+                    instances[ic] = instance_create(x + (lookdirection * 32), y, inventory[global.activeinv, 2]);
+                    with (instances[ic])
+                    {
+                        speedthrow = -2
+                        image_xscale = 0.2
+                        image_yscale = 0.2
+                    }
+                
+                   
+                    if ( inventory[global.activeinv, 1] &gt; 0)
+                    {
+                        inventory[global.activeinv, 1] -= 1
+                    }
+                    else
+                    {
+                        inventory[global.activeinv, 0] = 0
+                        inventory[global.activeinv, 2] = 0
+                        inventory[global.activeinv, 3] = 0
+                    }
+                     
+                    ic++
+                }
+            
+            
+            }
+            
+            if (lookdirection == 1)
+            {
+                if place_free(x+32,y)
+                {
+                      
+                    
+                    instances[ic] = instance_create(x + (lookdirection * 32), y, inventory[global.activeinv, 2]);
+                    with (instances[ic])
+                    {
+                        speedthrow = 2
+                        image_xscale = 0.2
+                        image_yscale = 0.2
+                    }
+                
+                    if ( inventory[global.activeinv, 1] &gt; 0)
+                    {
+                        inventory[global.activeinv, 1] -= 1
+                    }
+                    else
+                    {
+                        inventory[global.activeinv, 0] = 0
+                        inventory[global.activeinv, 2] = 0
+                        inventory[global.activeinv, 3] = 0
+                    }
+                    ic++
+                }
+            
+            
+            }
+            
+        }
+    }  
+        
+    
+    
+
     if keyboard_check(vk_space) //jump
     {
     
         if not place_free(x,y+1)
-        {vspeed=-20}
+        {vspeed=-10}
         //vspeed = vspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right
         image_speed = 0.2;
@@ -152,13 +203,15 @@ if keyboard_check(vk_anykey)
         hspeed = hspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right;    
         image_speed = 0.2;
+        lookdirection = -1;
     }
     if keyboard_check(ord('D')) //rechts
     {
-    
+        
         hspeed = hspeed + walkingspeed; 
         //sprite_index = spr_test_walk_right    
         image_speed = 0.2;
+        lookdirection = 1;
     }
 }
 else 
@@ -169,7 +222,7 @@ else
 
 if mouse_wheel_down()
 {
-    if (global.activeinv &gt;=1)
+    if (global.activeinv &gt;0)
     {
         global.activeinv -= 1;
     }
@@ -181,7 +234,7 @@ if mouse_wheel_down()
 }
 if mouse_wheel_up()
 {
-    if (global.activeinv &lt;=7)
+    if (global.activeinv &lt; 8)
     {
         global.activeinv += 1;
     }
@@ -223,6 +276,40 @@ if (hspeed &gt; maxspeed)
 if (hspeed &lt; -maxspeed)
 {
     hspeed = -maxspeed;
+}
+
+if device_mouse_check_button_pressed(0, mb_left)
+{
+    if (inventory[global.activeinv, 1] != 0)
+    {
+        if (inventory[global.activeinv, 0] == 4 || inventory[global.activeinv, 0] == 3)
+        {
+             
+            instances[ic] = instance_create(x + ((lookdirection * 32) - ((sprite_get_width(object_get_sprite(inventory[global.activeinv, 3]))*0.2)/2) ), y + ((sprite_get_height(object_get_sprite(inventory[global.activeinv, 3]))*0.2)/2), inventory[global.activeinv, 3]);
+            with (instances[ic])
+            {
+                
+                image_xscale = 0.2
+                image_yscale = 0.2
+                
+            }
+            
+             if ( inventory[global.activeinv, 1] &gt; 0)
+            {
+                inventory[global.activeinv, 1] -= 1
+            }
+            else
+            {
+                inventory[global.activeinv, 0] = 0
+                inventory[global.activeinv, 2] = 0
+                inventory[global.activeinv, 3] = 0
+            }
+            ic++
+        }
+    
+    }
+
+
 }
 </string>
           </argument>
@@ -273,10 +360,9 @@ if place_meeting(x,y,obj_collect_Falle1)
         if ((inventory[i, 0] == 3))
         {
             inventory[i, 1]++
-            with(instance_find(obj_collect_Falle1, 0))
-            {
-                 instance_destroy();
-            }
+inst = instance_place(x, y, obj_collect_Falle1);
+    
+           with (inst) instance_destroy();
             done = 1
             break
         }
@@ -289,10 +375,12 @@ if place_meeting(x,y,obj_collect_Falle1)
             {
                 inventory[i, 0] = 3
                 inventory[i, 1] = 1
-                 with(instance_find(obj_collect_Falle1, 0))
-            {
-                     instance_destroy();
-                }
+                inventory[i, 2] = obj_collect_Falle1
+                inventory[i, 3] = obj_Falle1
+                
+inst = instance_place(x, y, obj_collect_Falle1);
+    
+           with (inst) instance_destroy();
                 break
             }
         }
@@ -307,10 +395,13 @@ if place_meeting(x,y,obj_collect_Falle2)
         if ((inventory[i, 0] == 4))
         {
             inventory[i, 1]++
-             with(instance_find(obj_collect_Falle2, 0))
-            {
-                 instance_destroy();
-            }
+
+
+            inst = instance_place(x, y, obj_collect_Falle2);
+    
+           with (inst) instance_destroy();
+
+            
             done = 1
             break
         }
@@ -323,10 +414,14 @@ if place_meeting(x,y,obj_collect_Falle2)
             {
                 inventory[i, 0] = 4
                 inventory[i, 1] = 1
-                with(instance_find(obj_collect_Falle2, 0))
-                {
-                     instance_destroy();
-                }
+                 inventory[i, 2] = obj_collect_Falle2
+                 inventory[i, 3] = obj_Falle2
+
+                inst = instance_place(x, y, obj_collect_Falle2);
+    
+                  with (inst) instance_destroy();
+
+                
                 break
             }
         }
@@ -342,10 +437,10 @@ if place_meeting(x,y,obj_collect_Bomerang)
         {
             inventory[i, 0] = 5
             inventory[i, 1] = 1
-             with(instance_find(obj_collect_Bomerang, 0))
-            {
-                 instance_destroy();
-            }
+             inventory[i, 2] = obj_collect_Bomerang
+            inst = instance_place(x, y, obj_collect_Bomerang);
+    
+             with (inst) instance_destroy();
             break
         }
     }
@@ -361,10 +456,10 @@ if place_meeting(x,y,obj_collect_Spitzhacke)
         {
             inventory[i, 0] = 0
             inventory[i, 1] = 1
-             with(instance_find(obj_collect_Spitzhacke, 0))
-            {
-                 instance_destroy();
-            }
+             inventory[i, 2] = obj_collect_Spitzhacke
+inst = instance_place(x, y, obj_collect_Spitzhacke);
+    
+             with (inst) instance_destroy();
            
             
             break
@@ -382,10 +477,10 @@ if place_meeting(x,y,obj_collect_Sword)
         {
             inventory[i, 0] = 2
             inventory[i, 1] = 1
-             with(instance_find(obj_collect_Sword, 0))
-            {
-                 instance_destroy();
-            }
+             inventory[i, 2] = obj_collect_Sword
+inst = instance_place(x, y, obj_collect_Sword);
+    
+             with (inst) instance_destroy();
             break
         }
     }
@@ -402,11 +497,10 @@ if place_meeting(x,y,obj_collect_Knife)
         {
             inventory[i, 0] = 1
             inventory[i, 1] = 1
-            
-             with(instance_find(obj_collect_Knife, 0))
-            {
-                 instance_destroy();
-            }
+             inventory[i, 2] = obj_collect_Knife
+inst = instance_place(x, y, obj_collect_Knife);
+    
+             with (inst) instance_destroy();
             break
         }
     }
@@ -416,6 +510,26 @@ if place_meeting(x,y,obj_collect_Knife)
 
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Movement Managr</string>
           </argument>
         </arguments>
       </action>
@@ -454,6 +568,8 @@ for (i = 0; i &lt; 9; i++)
   
   }
 }
+
+
 </string>
           </argument>
         </arguments>
