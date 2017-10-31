@@ -74,7 +74,25 @@ global.items[5,1] = 0
 //item  blockablility
 global.items[5,2] = 0
 
-
+var base_w = 1920;
+var base_h = 1080;
+var max_w = display_get_width();
+var max_h = display_get_height();
+var aspect = display_get_width() / display_get_height();
+var global.VIEW_HEIGHT = 0;
+var global.VIEW_WIDTH = 0;
+if (max_w &lt; max_h)
+    {
+    // portait
+    global.VIEW_WIDTH = min(base_w, max_w);
+    global.VIEW_HEIGHT = global.VIEW_WIDTH / aspect;
+    }
+else
+    {
+    // landscape
+    global.VIEW_HEIGHT = min(base_h, max_h);
+    global.VIEW_WIDTH = global.VIEW_HEIGHT * aspect;
+    }
 
 var i = true;
 var rm = room_next(room);
@@ -143,7 +161,7 @@ surface_resize(application_surface, view_wview[0], view_hview[0]);
 
 
 
-draw_sprite(spr_options, 0, VIEW_WIDTH -100, 20);
+draw_sprite(spr_options, 0, VIEW_WIDTH -150, 20);
 
 </string>
           </argument>

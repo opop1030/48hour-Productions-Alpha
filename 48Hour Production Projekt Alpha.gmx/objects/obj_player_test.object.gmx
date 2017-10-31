@@ -51,6 +51,26 @@ inventory[5,1] = 0
 inventory[6,1] = 0
 inventory[7,1] = 0
 inventory[8,1] = 0
+
+var base_w = 1920;
+var base_h = 1080;
+var max_w = display_get_width();
+var max_h = display_get_height();
+var aspect = display_get_width() / display_get_height();
+var global.VIEW_HEIGHT = 0;
+var global.VIEW_WIDTH = 0;
+if (max_w &lt; max_h)
+    {
+    // portait
+    global.VIEW_WIDTH = min(base_w, max_w);
+    global.VIEW_HEIGHT = global.VIEW_WIDTH / aspect;
+    }
+else
+    {
+    // landscape
+    global.VIEW_HEIGHT = min(base_h, max_h);
+    global.VIEW_WIDTH = global.VIEW_HEIGHT * aspect;
+    }
 </string>
           </argument>
         </arguments>
@@ -221,7 +241,7 @@ if place_meeting(x,y,obj_collect_Falle1)
         if ((inventory[i, 0] == 3))
         {
             inventory[i, 1]++
-            with (obj_collect_Falle1)
+            with(instance_find(obj_collect_Falle1, 0))
             {
                  instance_destroy();
             }
@@ -237,8 +257,8 @@ if place_meeting(x,y,obj_collect_Falle1)
             {
                 inventory[i, 0] = 3
                 inventory[i, 1] = 1
-                with (obj_collect_Falle1)
-                {
+                 with(instance_find(obj_collect_Falle1, 0))
+            {
                      instance_destroy();
                 }
                 break
@@ -255,7 +275,7 @@ if place_meeting(x,y,obj_collect_Falle2)
         if ((inventory[i, 0] == 4))
         {
             inventory[i, 1]++
-            with (obj_collect_Falle2)
+             with(instance_find(obj_collect_Falle2, 0))
             {
                  instance_destroy();
             }
@@ -271,7 +291,7 @@ if place_meeting(x,y,obj_collect_Falle2)
             {
                 inventory[i, 0] = 4
                 inventory[i, 1] = 1
-                with (obj_collect_Falle2)
+                with(instance_find(obj_collect_Falle2, 0))
                 {
                      instance_destroy();
                 }
@@ -279,6 +299,87 @@ if place_meeting(x,y,obj_collect_Falle2)
             }
         }
     }
+}
+
+if place_meeting(x,y,obj_collect_Bomerang)
+{
+
+    for (i = 0; i &lt; 9; i++)
+    {
+        if (inventory[i, 1] == 0)  
+        {
+            inventory[i, 0] = 5
+            inventory[i, 1] = 1
+             with(instance_find(obj_collect_Bomerang, 0))
+            {
+                 instance_destroy();
+            }
+            break
+        }
+    }
+    
+}
+
+if place_meeting(x,y,obj_collect_Spitzhacke)
+{
+
+    for (i = 0; i &lt; 9; i++)
+    {
+        if (inventory[i, 1] == 0)  
+        {
+            inventory[i, 0] = 0
+            inventory[i, 1] = 1
+             with(instance_find(obj_collect_Spitzhacke, 0))
+            {
+                 instance_destroy();
+            }
+           
+            
+            break
+        }
+    }
+    
+}
+
+if place_meeting(x,y,obj_collect_Sword)
+{
+
+    for (i = 0; i &lt; 9; i++)
+    {
+        if (inventory[i, 1] == 0)  
+        {
+            inventory[i, 0] = 2
+            inventory[i, 1] = 1
+             with(instance_find(obj_collect_Sword, 0))
+            {
+                 instance_destroy();
+            }
+            break
+        }
+    }
+    
+    
+}
+
+if place_meeting(x,y,obj_collect_Knife)
+{
+
+    for (i = 0; i &lt; 9; i++)
+    {
+        if (inventory[i, 1] == 0)  
+        {
+            inventory[i, 0] = 1
+            inventory[i, 1] = 1
+            
+             with(instance_find(obj_collect_Knife, 0))
+            {
+                 instance_destroy();
+            }
+            break
+        }
+    }
+    
+    
 }
 
 
@@ -311,7 +412,7 @@ for (i = 0; i &lt; 9; i++)
   if (inventory[i, 1] &gt;= 1)  
   {
     //draw_text(100, 100, inventory[i, 0]])
-    draw_sprite(spr_inventory, inventory[i, 0], i*100+100, 200) 
+    draw_sprite(spr_inventory, inventory[i, 0], i*120+120, global.VIEW_HEIGHT - 50) 
     if (inventory[i, 1] &gt; 1)
     {
         draw_text(i*100, 200, inventory[i, 1])

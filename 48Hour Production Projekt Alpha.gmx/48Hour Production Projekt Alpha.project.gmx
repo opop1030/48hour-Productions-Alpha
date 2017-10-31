@@ -48,6 +48,10 @@
     <object>objects\obj_collect_Falle1</object>
     <object>objects\obj_collect_Falle2</object>
     <object>objects\obj_mapgenerator</object>
+    <object>objects\obj_collect_Knife</object>
+    <object>objects\obj_collect_Bomerang</object>
+    <object>objects\obj_collect_Sword</object>
+    <object>objects\obj_collect_Spitzhacke</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
