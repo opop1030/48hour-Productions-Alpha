@@ -33,6 +33,7 @@
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_invindicate</sprite>
     </sprites>
     <sprite>sprites\spr_gray_test</sprite>
   </sprites>
@@ -50,10 +51,15 @@
     <object>objects\obj_collect_Falle2</object>
     <object>objects\obj_mapgenerator</object>
     <object>objects\obj_gray_bg</object>
+    <object>objects\obj_block_128</object>
+    <object>objects\obj_collect_Bomerang</object>
+    <object>objects\obj_collect_Knife</object>
+    <object>objects\obj_collect_Spitzhacke</object>
+    <object>objects\obj_collect_Sword</object>
+    <object>objects\SCHINKEN</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_generator</room>
-    <room>rooms\room_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
