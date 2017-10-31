@@ -19,7 +19,8 @@
       <sprite>sprites\spr_collect_Falle2_static</sprite>
       <sprite>sprites\spr_collect_Spitzhacke_static</sprite>
       <sprite>sprites\spr_collect_Sword_static</sprite>
-      <sprite>sprites\sprite21</sprite>
+      <sprite>sprites\spr_Falle1_static</sprite>
+      <sprite>sprites\spr_Falle1_static_Active</sprite>
     </sprites>
     <sprites name="Animationen">
       <sprite>sprites\spr_blingbling</sprite>
@@ -61,6 +62,7 @@
     <object>objects\obj_collect_Sword</object>
     <object>objects\obj_Falle1</object>
     <object>objects\obj_explosion</object>
+    <object>objects\obj_Falle1_active</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
