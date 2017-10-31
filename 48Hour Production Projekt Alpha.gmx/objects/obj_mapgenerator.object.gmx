@@ -364,23 +364,59 @@ while(Cursorheight &lt; Mapheight)
 //    Drawing Caves    //
 /////////////////////////
 
+
+/////////////////////////////////////////
+//    Drawing Gras &amp; Trees $ Bushes    //
+
+//Start Drawing
+var xheight;
+for(xheight = 0; xheight &lt; Mapheight; xheight += 1)
+{
+    var xwidth;
+    for (xwidth = 0; xwidth &lt; Mapwidth; xwidth += 1)
+    {
+        //is it a block
+        if(Map[xwidth,xheight]==1){
+            //is there no block on top
+            if(Map[xwidth,xheight-1]==0){
+                //Gras
+                Map[xwidth,xheight-1]=2
+            }
+        }
+    }
+}
+
+//    Drawing Gras &amp; Trees $ Bushes    //
+/////////////////////////////////////////
+
 //          Start generating          //
 ////////////////////////////////////////
 
 
 //Start Drawing
-
-var xwidth;
-for (xwidth = 0; xwidth &lt; Mapwidth; xwidth += 1)
+var xheight;
+for(xheight = 0; xheight &lt; Mapheight; xheight += 1)
 {
-    var xheight;
-    for(xheight = 0; xheight &lt; Mapheight; xheight += 1)
+    var xwidth;
+    for (xwidth = 0; xwidth &lt; Mapwidth; xwidth += 1)
     {
-        if(Map[xwidth,xheight] == 1)
+        // 0 = no block
+        // 1 = normal block
+        // 2 = Gras
+        // 3 = Tree
+        // 4 = Bush
+        // 5 = Item + Gras //=&gt; Random Item
+    
+        coordinate_x = (xwidth+1) * Blockspacing;
+        coordinate_y = (xheight+1) * Blockspacing;
+        
+        if(Map[xwidth,xheight] == 1) 
         {
-            coordinate_x = (xwidth+1) * Blockspacing;
-            coordinate_y = (xheight+1) * Blockspacing;
             instance_create(coordinate_x, coordinate_y, obj_block_test);
+        }
+        else if (Map[xwidth,xheight] == 2)
+        {
+            instance_create(coordinate_x, coordinate_y, obj_Gras);
         }
     
         
