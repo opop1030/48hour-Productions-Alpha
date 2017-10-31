@@ -186,7 +186,7 @@ if keyboard_check(vk_anykey)
     {
     
         if not place_free(x,y+1)
-        {vspeed=-10}
+        {vspeed=-30}
         //vspeed = vspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right
         image_speed = 0.2;

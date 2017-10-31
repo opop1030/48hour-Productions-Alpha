@@ -19,13 +19,13 @@
       <sprite>sprites\spr_collect_Falle2_static</sprite>
       <sprite>sprites\spr_collect_Spitzhacke_static</sprite>
       <sprite>sprites\spr_collect_Sword_static</sprite>
-      <sprite>sprites\sprite21</sprite>
     </sprites>
     <sprites name="Animationen">
       <sprite>sprites\spr_blingbling</sprite>
-      <sprite>sprites\sprite20</sprite>
     </sprites>
     <sprites name="Textures">
+      <sprite>sprites\spr_baum_medium</sprite>
+      <sprite>sprites\spr_baum_big</sprite>
       <sprite>sprites\spr_Baum</sprite>
       <sprite>sprites\spr_Gebuesch</sprite>
       <sprite>sprites\spr_Gras</sprite>
@@ -38,6 +38,8 @@
       <sprite>sprites\spr_invindicate</sprite>
     </sprites>
     <sprite>sprites\spr_gray_test</sprite>
+    <sprite>sprites\spr_Background_front</sprite>
+    <sprite>sprites\spr_Background_Back</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -46,8 +48,6 @@
     <script>scripts\scr_create_inventory.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_Falle2</object>
-    <object>objects\obj_player_test</object>
     <object>objects\obj_block_test</object>
     <object>objects\obj_controller_test</object>
     <object>objects\obj_collect_Falle1</object>
@@ -59,12 +59,20 @@
     <object>objects\obj_collect_Knife</object>
     <object>objects\obj_collect_Spitzhacke</object>
     <object>objects\obj_collect_Sword</object>
-    <object>objects\obj_Falle1</object>
+    <object>objects\SCHINKEN</object>
+    <object>objects\obj_Bush</object>
+    <object>objects\obj_Gras</object>
+    <object>objects\obj_Tree</object>
+    <object>objects\obj_Tree_Medium</object>
+    <object>objects\obj_Tree_Big</object>
     <object>objects\obj_explosion</object>
+    <object>objects\obj_Falle1</object>
+    <object>objects\obj_Falle2</object>
+    <object>objects\obj_player_test</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test</room>
     <room>rooms\room_generator</room>
+    <room>rooms\room_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
