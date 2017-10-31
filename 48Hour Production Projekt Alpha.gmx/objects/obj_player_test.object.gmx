@@ -25,9 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>walkingspeed = 1;
 maxspeed = 5;
 
+=======
+            <string>walkingspeed = 5;
+maxspeed = 10;
+lookdirection = 1;
+>>>>>>> d93517fdc26b65e4319f758873875276444241c7
 
 
 inventory[0,0] = 0
@@ -116,7 +122,7 @@ global.activeinv = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction = 0.5;
+            <string>friction = 1;
 
 
 vspeed += 1
@@ -129,7 +135,7 @@ if keyboard_check(vk_anykey)
     {
     
         if not place_free(x,y+1)
-        {vspeed=-10}
+        {vspeed=-20}
         //vspeed = vspeed - walkingspeed; 
         //sprite_index = spr_test_walk_right
         image_speed = 0.2;
@@ -431,15 +437,15 @@ if place_meeting(x,y,obj_collect_Knife)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_invindicate, 0, global.activeinv *150+150- (sprite_get_width(spr_invindicate)/2 ), global.VIEW_HEIGHT  - (sprite_get_height(spr_invindicate)/2))
-
+            <string>draw_sprite(spr_invindicate, 0, view_xview + global.activeinv *150 + 150 -(sprite_get_width(spr_invindicate)/2 ), view_yview +  1080 - (sprite_get_height(spr_invindicate)/2))//- (sprite_get_height(spr_invindicate)/2)
+//global.activeinv *150+150- (sprite_get_width(spr_invindicate)/2 )
 draw_self();
 for (i = 0; i &lt; 9; i++)
 {
   if (inventory[i, 1] &gt;= 1)  
   {
     //draw_text(100, 100, inventory[i, 0]])
-    draw_sprite(spr_inventory, inventory[i, 0], i*150+150 - (sprite_get_width(spr_inventory)/2), global.VIEW_HEIGHT - (sprite_get_height(spr_inventory)/2)) 
+    draw_sprite(spr_inventory, inventory[i, 0],view_xview + i*150+150 - (sprite_get_width(spr_inventory)/2), view_yview +  1080 - (sprite_get_height(spr_inventory)/2)) 
     if (inventory[i, 1] &gt; 1)
     {
         draw_text(i*100, 200, inventory[i, 1])

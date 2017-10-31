@@ -139,6 +139,10 @@ var base_h = 1080;
 var max_w = display_get_width();
 var max_h = display_get_height();
 var aspect = display_get_width() / display_get_height();
+
+//View_xview
+//View_yview
+
 if (max_w &lt; max_h)
     {
     // portait
@@ -161,7 +165,7 @@ surface_resize(application_surface, view_wview[0], view_hview[0]);
 
 
 
-draw_sprite(spr_options, 0, VIEW_WIDTH -150, 20);
+draw_sprite(spr_options, 0, view_xview -150, 20);
 
 </string>
           </argument>
