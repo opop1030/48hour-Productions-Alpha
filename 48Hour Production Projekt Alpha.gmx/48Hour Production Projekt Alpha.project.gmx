@@ -23,7 +23,7 @@
     </sprites>
     <sprites name="Animationen">
       <sprite>sprites\spr_blingbling</sprite>
-      <sprite>sprites\sprite20</sprite>
+      <sprite>sprites\spr_explosion</sprite>
     </sprites>
     <sprites name="Textures">
       <sprite>sprites\spr_Baum</sprite>
